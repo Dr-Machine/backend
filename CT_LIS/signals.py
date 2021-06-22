@@ -23,21 +23,16 @@ def run_CTLungInfectionSegmentation(sender, instance, created, **kwargs):
         extract_zipfile_case(instance.file.path, case_directory_path)
 
         _file = find_a_dicom_file(case_directory_path=case_directory_path)
-
         metadata = read_metadata(_file)
         update_case_metadata(instance=instance, metadata=metadata)
-        # instance.patient_id = metadata['PatientID']
-        # instance.patient_sex = metadata['PatientSex']
-        # instance.patient_age = int(metadata['PatientAge'][:-1])
-        # instance.save()
 
         result_directory_path = f'{instance.results_directory_path}/{instance.id}/'
         validate_result_directory_existence(
             result_directory_path=result_directory_path)
 
-        # execute_run_model.delay(case_directory_path=case_directory_path,
-        #                         result_directory_path=result_directory_path,
-        #                         id=instance.id)
+        execute_run_model.delay(case_directory_path=case_directory_path,
+                                result_directory_path=result_directory_path,
+                                id=instance.id)
 
         logger.info('CT lung infection segmentation task was '
                     'successfully added to the task queue!')
