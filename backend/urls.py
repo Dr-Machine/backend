@@ -9,6 +9,8 @@ urlpatterns = [
 
     path('api/accounts/', include('accounts.urls')),
 
+    path('api/contacts/', include('contacts.urls')),
+
     path('api/CT_LIS/', include('CT_LIS.routers')),
 
     path('api/profiles/', include('profiles.routers')),

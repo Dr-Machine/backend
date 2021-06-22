@@ -29,6 +29,7 @@ INSTALLED_APPS = [
 
     # apps
     'accounts',
+    'contacts',
     'CT_LIS',
     'profiles',
 ]
