@@ -5,6 +5,7 @@ from profiles.models import Profile
 
 class ProfileAdmin(admin.ModelAdmin):
     model = Profile
+    readonly_fields = ('id', )
     list_display = ('user', 'email_confirmed', 'mobile', 'mobile_confirmed',
                     'national_id', 'national_id_confirmed')
     list_filter = ('user', 'email_confirmed', 'mobile', 'mobile_confirmed',

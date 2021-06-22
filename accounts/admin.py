@@ -6,16 +6,17 @@ from accounts.models import CustomUser
 
 
 class CustomUserAdmin(UserAdmin):
-    add_form = CustomUserCreationForm
-    form = CustomUserChangeForm
     model = CustomUser
+    form = CustomUserChangeForm
+    add_form = CustomUserCreationForm
+    readonly_fields = ('id', )
     list_display = ('email', 'first_name', 'last_name', 'is_staff',
                     'is_active', 'last_login')
     list_filter = ('email', 'first_name', 'last_name', 'is_staff', 'is_active',
                    'last_login')
     fieldsets = (
         (None, {
-            'fields': ('email', 'first_name', 'last_name', 'password')
+            'fields': ('id', 'email', 'first_name', 'last_name', 'password')
         }),
         ('Permissions', {
             'fields': ('is_staff', 'is_active')

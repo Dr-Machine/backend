@@ -30,8 +30,7 @@ class CustomUser(AbstractUser):
 
     @property
     def media_path(self):
-        timestamp = str(self.date_joined).split(' ')[0]
-        directory_name = f'{timestamp}_{self.nickname}'
+        directory_name = str(self.id)
         return directory_name
 
 
