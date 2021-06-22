@@ -6,7 +6,7 @@ from profiles.serializers import ProfileSerializers
 
 
 class ProfileView(viewsets.ModelViewSet):
-    permission_classes = (IsAuthenticated, )
+    permission_classes = [IsAuthenticated]
     queryset = Profile.objects.all()
     lookup_field = 'id'
     lookup_url_kwarg = 'id'

@@ -5,7 +5,7 @@ from contacts.serializers import ContactSerializer
 
 
 class ContactView(CreateAPIView):
-    permission_classes = (AllowAny, )
+    permission_classes = [AllowAny]
     serializer_class = ContactSerializer
 
     def perform_create(self, serializer):

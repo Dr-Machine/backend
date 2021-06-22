@@ -9,7 +9,7 @@ from accounts.serializers import CustomUserSerializers
 
 
 class CustomUserView(APIView):
-    permission_classes = (IsAuthenticated, )
+    permission_classes = [IsAuthenticated]
     serializer_class = CustomUserSerializers
 
     def get(self, request, format=None):
@@ -18,7 +18,7 @@ class CustomUserView(APIView):
 
 
 class LogoutView(APIView):
-    permission_classes = (IsAuthenticated, )
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, format=None):
         user = request.user
