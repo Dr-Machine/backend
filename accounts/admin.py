@@ -30,12 +30,4 @@ class CustomUserAdmin(UserAdmin):
     ordering = ('email', )
 
 
-# class ProfileAdmin(admin.ModelAdmin):
-#     model = Profile
-#     list_display = ('user', 'email_confirmed', 'mobile', 'mobile_confirmed',
-#                     'national_id', 'national_id_confirmed')
-#     list_filter = ('user', 'email_confirmed', 'mobile', 'mobile_confirmed',
-#                    'national_id', 'national_id_confirmed')
-
 admin.site.register(CustomUser, CustomUserAdmin)
-# admin.site.register(Profile, ProfileAdmin)

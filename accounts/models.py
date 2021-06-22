@@ -35,33 +35,7 @@ class CustomUser(AbstractUser):
         return directory_name
 
 
-# class Profile(models.Model):
-#     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-#     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-#     email_confirmed = models.BooleanField(default=False)
-#     mobile = models.CharField(max_length=11,
-#                               default=None,
-#                               null=True,
-#                               blank=True,
-#                               validators=[mobile_regex])
-#     mobile_confirmed = models.BooleanField(default=False)
-#     national_id = models.CharField(max_length=10,
-#                                    default=None,
-#                                    null=True,
-#                                    blank=True,
-#                                    validators=[validate_national_ID])
-#     national_id_confirmed = models.BooleanField(default=False)
-#     medical_id = models.CharField(
-#         max_length=15,  # todo: R&D on real length
-#         default=None,
-#         null=True,
-#         blank=True)
-#     medical_id_confirmed = models.BooleanField(default=False)
-
-#     def __str__(self):
-#         return str(self.user)
-
-
+# todo: move BaseCase somewhere else
 class BaseCase(models.Model):
     class PatientSex(models.TextChoices):
         MALE = 'M', _('Male')

@@ -1,7 +1,5 @@
 from django.urls import path
 
-from rest_framework import routers
-
 from accounts.views import CustomUserView, LogoutView
 
 urlpatterns = [
