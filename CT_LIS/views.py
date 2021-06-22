@@ -1,12 +1,14 @@
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
 
 from CT_LIS.models import CTLungInfectionSegmentation
 from CT_LIS.serializers import CTLungInfectionSegmentationSerializers
 
 
 class CTLungInfectionSegmentationSerializersView(viewsets.ModelViewSet):
-    lookup_url_kwarg = 'id'
+    permission_classes = [IsAuthenticated]
     queryset = CTLungInfectionSegmentation.objects.all()
+    lookup_url_kwarg = 'id'
 
     def get_serializer_class(self):
         return CTLungInfectionSegmentationSerializers
