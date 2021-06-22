@@ -7,5 +7,9 @@ urlpatterns = [
     path('api/auth/', include('djoser.urls')),
     path('api/auth/', include('djoser.urls.jwt')),
 
+    path('api/accounts/', include('accounts.urls')),
+
     path('api/CT_LIS/', include('CT_LIS.routers')),
+
+    path('api/profiles/', include('profiles.routers')),
 ]

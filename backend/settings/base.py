@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     # apps
     'accounts',
     'CT_LIS',
+    'profiles',
 ]
 
 MIDDLEWARE = [

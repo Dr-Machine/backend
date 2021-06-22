@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from accounts.models import CustomUser, Profile
+from accounts.models import CustomUser
 
 
 class CustomUserSerializers(serializers.ModelSerializer):
@@ -10,11 +10,11 @@ class CustomUserSerializers(serializers.ModelSerializer):
                   'last_login')
 
 
-class ProfileSerializers(serializers.ModelSerializer):
-    user = CustomUserSerializers()
+# class ProfileSerializers(serializers.ModelSerializer):
+#     user = CustomUserSerializers()
 
-    class Meta:
-        model = Profile
-        fields = ('id', 'user', 'email_confirmed', 'mobile',
-                  'mobile_confirmed', 'national_id', 'national_id_confirmed',
-                  'medical_id', 'medical_id_confirmed')
+#     class Meta:
+#         model = Profile
+#         fields = ('id', 'user', 'email_confirmed', 'mobile',
+#                   'mobile_confirmed', 'national_id', 'national_id_confirmed',
+#                   'medical_id', 'medical_id_confirmed')
