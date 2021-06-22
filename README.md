@@ -7,10 +7,6 @@ This application is developed using:
 - [lungmask](https://github.com/JoHof/lungmask) package (utilizing [PyTorch](https://pytorch.org/))
 
 ## Usage
-- Relocate to the backend directory:
-    ```shell
-    $ cd backend
-    ```
 - Create a virtual environment:
     ```shell
     $ python -m venv .venv
