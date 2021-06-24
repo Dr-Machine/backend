@@ -1,10 +1,11 @@
 # Backend for Dr. Machine
 
 This application is developed using:
-- [Django](https://www.djangoproject.com/) - [Django REST Framework](https://www.django-rest-framework.org/) - [Djoser](https://djoser.readthedocs.io/en/latest/getting_started.html)
+- [Django](https://www.djangoproject.com/) - [Djoser](https://djoser.readthedocs.io/en/latest/getting_started.html)
+- [Django REST Framework](https://www.django-rest-framework.org/)
 - [Celery](https://docs.celeryproject.org/en/stable/) - [Redis](https://redis.io/)
-- [Keras](https://keras.io/) - [PyDicom](https://pydicom.github.io/)
-- [lungmask](https://github.com/JoHof/lungmask) package (utilizing [PyTorch](https://pytorch.org/))
+- [Keras](https://keras.io/) - [PyDicom](https://pydicom.github.io/) - [OpenCV](https://opencv.org/) 
+- [lungmask](https://github.com/JoHof/lungmask) (utilizing [PyTorch](https://pytorch.org/))
 
 ## Usage
 - Create a virtual environment:
