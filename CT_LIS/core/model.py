@@ -65,13 +65,13 @@ class CTLungInfectionSegmentationModel:
         series_reader = self.__read_series(series_file_names=series_file_names)
         self.image3D = self.__execute_series_reader(series_reader)
 
-        self.lobe_segmentation = self.__run_mask()
-        # self.lobe_segmentation = np.load('ls.npy')
+        # self.lobe_segmentation = self.__run_mask()
+        self.lobe_segmentation = np.load('ls.npy')
 
         self.image3D = self.__preprocess()
 
-        self.infection_segmentation = self.__run_models()
-        # self.infection_segmentation = np.load('is.npy')
+        # self.infection_segmentation = self.__run_models()
+        self.infection_segmentation = np.load('is.npy')
 
         features = []
         for i_lobe in range(1, 6):

@@ -1,7 +1,5 @@
 import logging
 
-from time import sleep
-
 from backend.celery import app
 
 from CT_LIS.core.model import CTLungInfectionSegmentationModel
@@ -15,21 +13,25 @@ logger = logging.getLogger('backend')
 @app.task(name='CT_LIS.execute_run_mode')
 def execute_run_model(case_directory_path: str, result_directory_path: str,
                       id: str) -> None:
+    return _execute_run_model(case_directory_path=case_directory_path,
+                              result_directory_path=result_directory_path,
+                              id=id)
+
+
+def _execute_run_model(case_directory_path: str, result_directory_path: str,
+                       id: str) -> None:
     logger.info('Executing run model...')
 
     instance = CTLungInfectionSegmentation.objects.get(id=id)
 
     lock_instance(instance=instance)
 
-    # model = CTLungInfectionSegmentationModel()
+    model = CTLungInfectionSegmentationModel()
 
     logger.info('Model is extracting features...')
-    # features = model.run(case_directory_path=case_directory_path,
-    #                      result_directory_path=result_directory_path)
-    sleep(10)
-    features = [0.1, 0.2, 0.3, 0.4, 0.5]
+    features = model.run(case_directory_path=case_directory_path,
+                         result_directory_path=result_directory_path)
     logger.info('Model feature extraction completed!')
-    logger.info(f'Extracted features are {features}.')
 
     logger.info('Proceding to save the extraced features...')
     try:
