@@ -2,14 +2,14 @@ from rest_framework import serializers
 
 from accounts.serializers import CustomUserSerializers
 
-from CT_LIS.models import CTLungInfectionSegmentation
+from CT_LIS.models import COVID19Diagnosis
 
 
-class CTLungInfectionSegmentationSerializers(serializers.ModelSerializer):
+class COVID19DiagnosisSerializers(serializers.ModelSerializer):
     # prescriber = CustomUserSerializers()
 
     class Meta:
-        model = CTLungInfectionSegmentation
+        model = COVID19Diagnosis
         fields = [
             'id',
             'prescriber',
@@ -19,9 +19,7 @@ class CTLungInfectionSegmentationSerializers(serializers.ModelSerializer):
             'patient_sex',
             'patient_age',
             'file',
-            'upper_left',
-            'upper_right',
-            'lower_left',
-            'lower_middle',
-            'lower_right',
+            'normal',
+            'pneumonia',
+            'covid',
         ]
