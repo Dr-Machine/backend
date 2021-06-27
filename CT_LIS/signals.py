@@ -6,10 +6,10 @@ from django.dispatch import receiver
 from CT_LIS.models import CTLungInfectionSegmentation
 from CT_LIS.tasks import execute_run_model
 from CT_LIS.transactions import update_case_metadata
-from CT_LIS.utils.dicom_utils import read_metadata
-from CT_LIS.utils.misc import (extract_zipfile_case,
-                               validate_result_directory_existence,
-                               find_a_dicom_file)
+
+from utils.dicom_utils import read_metadata
+from utils.misc import (extract_zipfile_case,
+                        validate_result_directory_existence, find_a_dicom_file)
 
 logger = logging.getLogger('backend')
 

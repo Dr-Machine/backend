@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from accounts.serializers import CustomUserSerializers
 
-from CT_LIS.models import COVID19Diagnosis
+from ai_corona.models import COVID19Diagnosis
 
 
 class COVID19DiagnosisSerializers(serializers.ModelSerializer):

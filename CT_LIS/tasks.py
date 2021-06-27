@@ -6,8 +6,7 @@ from backend.celery import app
 
 from CT_LIS.core.model import CTLungInfectionSegmentationModel
 from CT_LIS.models import CTLungInfectionSegmentation
-from CT_LIS.transactions import (update_case_features, lock_instance,
-                                 unlock_instance)
+from CT_LIS.transactions import update_case_features
 
 logger = logging.getLogger('backend')
 
@@ -18,8 +17,6 @@ def execute_run_model(case_directory_path: str, result_directory_path: str,
     logger.info('Executing run model...')
 
     instance = CTLungInfectionSegmentation.objects.get(id=id)
-
-    lock_instance(instance=instance)
 
     # model = CTLungInfectionSegmentationModel()
 
@@ -38,7 +35,5 @@ def execute_run_model(case_directory_path: str, result_directory_path: str,
     except Exception as e:
         message = (f'Failed to save extracted features. Reason: {str(e)}.')
         logger.error(message)
-
-    unlock_instance(instance=instance)
 
     logger.info('Executing run model finished!')

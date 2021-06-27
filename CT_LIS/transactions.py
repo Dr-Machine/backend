@@ -25,19 +25,3 @@ def update_case_features(instance, features) -> None:
     instance.lower_right = features[4]
     instance.save()
     logger.info('Case features updated!')
-
-
-@transaction.atomic
-def lock_instance(instance) -> None:
-    logger.info('Locking instance...')
-    instance.lock = True
-    instance.save()
-    logger.info('Instance locked!')
-
-
-@transaction.atomic
-def unlock_instance(instance) -> None:
-    logger.info('Unlocking instance...')
-    instance.lock = False
-    instance.save()
-    logger.info('Instance unlocked!')
