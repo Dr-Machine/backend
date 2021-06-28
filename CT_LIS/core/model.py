@@ -82,6 +82,8 @@ class CTLungInfectionSegmentationModel:
 
         features = np.round(np.array(features) * 100, 1)
         self.features = features
+
+        logger.info('Segmentation complete!')
         logger.info(f'Extracted features: {self.features}')
 
         self.__store_results()
