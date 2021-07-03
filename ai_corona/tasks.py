@@ -17,13 +17,12 @@ def execute_run_model(case_directory_path: str, id: str) -> None:
 
     instance = COVID19Diagnosis.objects.get(id=id)
 
-    # model = COVID19DiagnosisModel()
+    model = COVID19DiagnosisModel()
 
     logger.info('Model is extracting features...')
-    # features = model.run(case_directory_path=case_directory_path)
-
-    sleep(10)
-    features = [0.1, 0.2, 0.3]
+    features = model.run(case_directory_path=case_directory_path)
+    # sleep(10)
+    # features = [0.1, 0.2, 0.3]
     logger.info('Model feature extraction completed!')
     logger.info(f'Extracted features are {features}.')
 

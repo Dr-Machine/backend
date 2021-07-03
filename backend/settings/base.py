@@ -29,7 +29,7 @@ INSTALLED_APPS = [
 
     # apps
     'accounts',
-    # 'ai_corona',
+    'ai_corona',
     'contacts',
     'CT_LIS',
     'profiles',

@@ -17,6 +17,7 @@ logger = logging.getLogger('backend')
 
 MODEL_PATH = f'{os.getcwd()}/ai_corona/core/h5s/ai_corona.h5'
 
+# Move this guys to a dedicated file.
 BATCH_SIZE = 8
 SHAPE = 512
 
@@ -42,8 +43,8 @@ class COVID19DiagnosisModel:
 
             logger.info('COVID-19 diagnosis model initialized!')
         except Exception as e:
-            message = ('Failed to initialize COVID-19 diagnosis model '
-                       f'model. Reason: {str(e)}.')
+            message = ('Failed to initialize COVID-19 diagnosis model. '
+                       f'Reason: {str(e)}.')
             logger.error(message)
             raise Exception(message)  # todo: Replace base exception.
 

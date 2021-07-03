@@ -3,7 +3,6 @@ import uuid
 
 from django.core.validators import FileExtensionValidator
 from django.db import models
-from django.utils.translation import gettext_lazy as _
 
 from accounts.models import BaseCase
 
@@ -51,7 +50,10 @@ class COVID19Diagnosis(BaseCase):
     def service_directory_path(self):
         directory_path = os.path.join(self.prescriber.media_path,
                                       SERVICE_NICKNAME)
-        directory_path = f'{MEDIA_ROOT}/{directory_path}'
+        # ! Why TF this did not work? :|
+        # directory_path = f'{MEDIA_ROOT}/{directory_path}'
+
+        directory_path = MEDIA_ROOT + directory_path
         return directory_path
 
     @property
@@ -63,15 +65,6 @@ class COVID19Diagnosis(BaseCase):
 
     @property
     def case_directory_path(self):
-        return f'{self.cases_directory_path}/{self.id}/'
-
-    # @property
-    # def results_directory_path(self):
-    #     results_path = os.path.join(self.service_directory_path, 'results')
-    #     if not os.path.isdir(results_path):
-    #         os.makedirs(results_path)
-    #     return results_path
-
-    # @property
-    # def result_directory_path(self):
-    #     return f'{self.results_directory_path}/{self.id}/'
+        p = f'{self.cases_directory_path}/{self.id}/'
+        print(f'{p = }')
+        return p

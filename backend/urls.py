@@ -11,7 +11,7 @@ urlpatterns = [
 
     path('api/contacts/', include('contacts.urls')),
 
-    path('api/services/CT_LIS/', include('CT_LIS.routers')),
+    path('api/services/ai_corona/', include('ai_corona.routers')),
     path('api/services/CT_LIS/', include('CT_LIS.routers')),
 
     path('api/profiles/', include('profiles.routers')),

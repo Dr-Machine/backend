@@ -7,7 +7,7 @@ from rest_framework.response import Response
 
 from ai_corona.models import COVID19Diagnosis
 from ai_corona.serializers import COVID19DiagnosisSerializers
-from CT_LIS.tasks import execute_run_model
+from ai_corona.tasks import execute_run_model
 
 logger = logging.getLogger('backend')
 

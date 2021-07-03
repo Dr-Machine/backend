@@ -18,13 +18,13 @@ def execute_run_model(case_directory_path: str, result_directory_path: str,
 
     instance = CTLungInfectionSegmentation.objects.get(id=id)
 
-    # model = CTLungInfectionSegmentationModel()
+    model = CTLungInfectionSegmentationModel()
 
     logger.info('Model is extracting features...')
-    # features = model.run(case_directory_path=case_directory_path,
-    #                      result_directory_path=result_directory_path)
-    sleep(10)
-    features = [0.1, 0.2, 0.3, 0.4, 0.5]
+    features = model.run(case_directory_path=case_directory_path,
+                         result_directory_path=result_directory_path)
+    # sleep(10)
+    # features = [0.1, 0.2, 0.3, 0.4, 0.5]
     logger.info('Model feature extraction completed!')
     logger.info(f'Extracted features are {features}.')
 

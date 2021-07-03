@@ -15,7 +15,7 @@ logger = logging.getLogger('backend')
 
 
 @receiver(post_save, sender=CTLungInfectionSegmentation)
-def run_CTLungInfectionSegmentation(sender, instance, created, **kwargs):
+def CTLungInfectionSegmentationSignal(sender, instance, created, **kwargs):
     if created:
         logger.info('Running functions at creating new CT lung '
                     'infection segmentation case ...')

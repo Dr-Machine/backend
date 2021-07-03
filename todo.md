@@ -1,0 +1,9 @@
+- Move BaseCase model somewhere else.
+- Place lock on model instance while `execute_run` is happening.
+- Move all shared and duplicate code to `utils`.
+- Create custom exceptions.
+- Better exception handling.
+- Check why the original `case_directory_path` in `ai_corona` did not work.
+- Prevent `execute_run` from happening a second time (by placing a check).
+- Aggregate all the knobs and parameters (e.g. batch size) in a dedicated file.
+- Move all validators to `utils'.

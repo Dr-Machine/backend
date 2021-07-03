@@ -6,4 +6,4 @@ class AiCoronaConfig(AppConfig):
     name = 'ai_corona'
 
     def ready(self):
-        from CT_LIS import signals
+        from ai_corona import signals

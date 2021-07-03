@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "67e56f5e-d646-4ddf-840a-91c094dd2482",
+		"_postman_id": "6749228e-f620-4931-94a0-42ab96da0f51",
 		"name": "Dr. Machine",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -258,6 +258,111 @@
 						"services",
 						"CT_LIS",
 						"45946db6-0e39-4890-bc8d-f39a497a12d1",
+						"run"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All ai_corona cases info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI1NDE1MTk2LCJqdGkiOiI2NjQ3MDY0MDUzOGY0NDBmYmU4NGM3ZmFkMTBhZDVmMCIsInVzZXJfaWQiOiI3YjU1ZGQ3Yy03NDg2LTQxYzctOTNjNy1lNTM5Y2UxY2M4NWEifQ.bekCXq9d1v1AZpaIgIryc1QAxYwK3R5VSZq5hdTJX-M",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8585/api/services/ai_corona/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"services",
+						"ai_corona",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New ai_corona case",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI1NDE1MTk2LCJqdGkiOiI2NjQ3MDY0MDUzOGY0NDBmYmU4NGM3ZmFkMTBhZDVmMCIsInVzZXJfaWQiOiI3YjU1ZGQ3Yy03NDg2LTQxYzctOTNjNy1lNTM5Y2UxY2M4NWEifQ.bekCXq9d1v1AZpaIgIryc1QAxYwK3R5VSZq5hdTJX-M",
+						"type": "text"
+					},
+					{
+						"key": "Content-Disposition",
+						"value": "attachment; filename=file",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "prescriber",
+							"value": "7b55dd7c-7486-41c7-93c7-e539ce1cc85a",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/titan/Downloads/poor.zip"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8585/api/services/ai_corona/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"services",
+						"ai_corona",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ai_corona run model",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI1NDE1MTk2LCJqdGkiOiI2NjQ3MDY0MDUzOGY0NDBmYmU4NGM3ZmFkMTBhZDVmMCIsInVzZXJfaWQiOiI3YjU1ZGQ3Yy03NDg2LTQxYzctOTNjNy1lNTM5Y2UxY2M4NWEifQ.bekCXq9d1v1AZpaIgIryc1QAxYwK3R5VSZq5hdTJX-M",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8585/api/services/ai_corona/5286b6a3-538f-4b37-bbb1-86f84b3091b2/run",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"services",
+						"ai_corona",
+						"5286b6a3-538f-4b37-bbb1-86f84b3091b2",
 						"run"
 					]
 				}
