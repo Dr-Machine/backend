@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "67e56f5e-d646-4ddf-840a-91c094dd2482",
+		"name": "Dr. Machine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get JSON web tokens",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"diretitan96@gmail.com\",\n    \"password\": \"12345678asd\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8585/api/auth/jwt/create/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"auth",
+						"jwt",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI1MzgxMTU5LCJqdGkiOiI5MjYyZmMxZWE1MmI0YzE3OGMxMGY5OWRiZjVkMmVlMyIsInVzZXJfaWQiOiIwYWM1NDgzMS0yYmZjLTQ3MGYtYmE3ZC03YTIzYWEwMzk0MzEifQ.bh6sr_2UZ4_IScYABeUWtWUB8o8IHPkbxjfuQlSeAj4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8585/api/accounts/info/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"accounts",
+						"info",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI1MzgxMTU5LCJqdGkiOiI5MjYyZmMxZWE1MmI0YzE3OGMxMGY5OWRiZjVkMmVlMyIsInVzZXJfaWQiOiIwYWM1NDgzMS0yYmZjLTQ3MGYtYmE3ZC03YTIzYWEwMzk0MzEifQ.bh6sr_2UZ4_IScYABeUWtWUB8o8IHPkbxjfuQlSeAj4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8585/api/profiles/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"profiles",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"afxin.amini@gmail.com\",\n    \"first_name\": \"Afshin\",\n    \"last_name\": \"Amini\",\n    \"subject\": \"Hire me plz\",\n    \"message\": \"Please hire me!\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8585/api/contacts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"contacts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All CT_LIS cases info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI1MzgxMTU5LCJqdGkiOiI5MjYyZmMxZWE1MmI0YzE3OGMxMGY5OWRiZjVkMmVlMyIsInVzZXJfaWQiOiIwYWM1NDgzMS0yYmZjLTQ3MGYtYmE3ZC03YTIzYWEwMzk0MzEifQ.bh6sr_2UZ4_IScYABeUWtWUB8o8IHPkbxjfuQlSeAj4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8585/api/services/CT_LIS/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"services",
+						"CT_LIS",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CT_LIS case info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI1MzgxMTU5LCJqdGkiOiI5MjYyZmMxZWE1MmI0YzE3OGMxMGY5OWRiZjVkMmVlMyIsInVzZXJfaWQiOiIwYWM1NDgzMS0yYmZjLTQ3MGYtYmE3ZC03YTIzYWEwMzk0MzEifQ.bh6sr_2UZ4_IScYABeUWtWUB8o8IHPkbxjfuQlSeAj4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8585/api/services/CT_LIS/2f3c426a-6928-462b-ae1c-9b61875dd562/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"services",
+						"CT_LIS",
+						"2f3c426a-6928-462b-ae1c-9b61875dd562",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New CT_LIS case",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI1MzgxMTU5LCJqdGkiOiI5MjYyZmMxZWE1MmI0YzE3OGMxMGY5OWRiZjVkMmVlMyIsInVzZXJfaWQiOiIwYWM1NDgzMS0yYmZjLTQ3MGYtYmE3ZC03YTIzYWEwMzk0MzEifQ.bh6sr_2UZ4_IScYABeUWtWUB8o8IHPkbxjfuQlSeAj4",
+						"type": "text"
+					},
+					{
+						"key": "Content-Disposition",
+						"value": "attachment; filename=file",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "prescriber",
+							"value": "0ac54831-2bfc-470f-ba7d-7a23aa039431",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/parsa/Desktop/parsa_segmentation/data/abdol/abdol.zip"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8585/api/services/CT_LIS/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"services",
+						"CT_LIS",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CT_LIS run model",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI1MzgxMTU5LCJqdGkiOiI5MjYyZmMxZWE1MmI0YzE3OGMxMGY5OWRiZjVkMmVlMyIsInVzZXJfaWQiOiIwYWM1NDgzMS0yYmZjLTQ3MGYtYmE3ZC03YTIzYWEwMzk0MzEifQ.bh6sr_2UZ4_IScYABeUWtWUB8o8IHPkbxjfuQlSeAj4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8585/api/services/CT_LIS/45946db6-0e39-4890-bc8d-f39a497a12d1/run",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"services",
+						"CT_LIS",
+						"45946db6-0e39-4890-bc8d-f39a497a12d1",
+						"run"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
