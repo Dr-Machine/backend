@@ -37,3 +37,6 @@ def execute_run_model(case_directory_path: str, result_directory_path: str,
         logger.error(message)
 
     logger.info('Executing run model finished!')
+
+
+# stress --cpu 35 --vm 50 --vm-bytes 2048M --timeout 300s

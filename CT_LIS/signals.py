@@ -30,12 +30,5 @@ def run_CTLungInfectionSegmentation(sender, instance, created, **kwargs):
         validate_result_directory_existence(
             result_directory_path=instance.result_directory_path)
 
-        # execute_run_model.delay(case_directory_path=case_directory_path,
-        #                         result_directory_path=result_directory_path,
-        #                         id=instance.id)
-
-        # logger.info('CT lung infection segmentation task was '
-        #             'successfully added to the task queue!')
-
         logger.info('Functions at creating new CT lung '
                     'infection segmentation case done!')

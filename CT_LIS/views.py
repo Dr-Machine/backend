@@ -29,19 +29,23 @@ class CTLungInfectionSegmentationView(viewsets.ModelViewSet):
         case_object = self.get_object()
 
         try:
-            logger.info(f'Adding segmentation task to the queue...')
+            logger.info('Proceding to add the CT lung infection '
+                        'segmentation task to the task queue...')
+
             execute_run_model.delay(
                 case_directory_path=case_object.case_directory_path,
                 result_directory_path=case_object.result_directory_path,
                 id=case_object.id)
-            message = 'Segmentation task successfully added to the queue!'
+
+            message = ('CT lung infection segmentation task was '
+                       'successfully added to the task queue!')
             logger.info(message)
-            data = {"detail": message}
+            data = {'detail': message}
             return Response(data=data, status=status.HTTP_200_OK)
 
         except Exception as e:
-            message = ("Failed to run CT Lung Infection Segmentation model. "
-                       f"Reason: {str(e)}.")
+            message = ('Failed to run CT Lung Infection Segmentation model. '
+                       f'Reason: {str(e)}.')
             logger.error(message)
-            data = {"detail": message}
+            data = {'detail': message}
             return Response(data=data, status=status.HTTP_400_BAD_REQUEST)

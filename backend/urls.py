@@ -12,7 +12,7 @@ urlpatterns = [
     path('api/contacts/', include('contacts.urls')),
 
     path('api/services/CT_LIS/', include('CT_LIS.routers')),
-    # path('api/services/CT_LIS/', include('CT_LIS.urls')),
+    path('api/services/CT_LIS/', include('CT_LIS.routers')),
 
     path('api/profiles/', include('profiles.routers')),
 ]

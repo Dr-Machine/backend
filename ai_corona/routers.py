@@ -1,6 +1,6 @@
 from rest_framework import routers
 
-from CT_LIS import views
+from ai_corona import views
 
 default_router = routers.DefaultRouter()
 default_router.register('', views.COVID19DiagnosisView)
