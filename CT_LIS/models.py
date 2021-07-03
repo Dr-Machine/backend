@@ -68,8 +68,16 @@ class CTLungInfectionSegmentation(BaseCase):
         return cases_path
 
     @property
+    def case_directory_path(self):
+        return f'{self.cases_directory_path}/{self.id}/'
+
+    @property
     def results_directory_path(self):
         results_path = os.path.join(self.service_directory_path, 'results')
         if not os.path.isdir(results_path):
             os.makedirs(results_path)
         return results_path
+
+    @property
+    def result_directory_path(self):
+        return f'{self.results_directory_path}/{self.id}/'

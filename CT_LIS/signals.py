@@ -17,22 +17,25 @@ logger = logging.getLogger('backend')
 @receiver(post_save, sender=CTLungInfectionSegmentation)
 def run_CTLungInfectionSegmentation(sender, instance, created, **kwargs):
     if created:
-        logger.info('Proceding to run CT lung infection segmentation....')
+        logger.info('Running functions at creating new CT lung '
+                    'infection segmentation case ...')
 
-        case_directory_path = f'{instance.cases_directory_path}/{instance.id}/'
-        extract_zipfile_case(instance.file.path, case_directory_path)
+        extract_zipfile_case(instance.file.path, instance.case_directory_path)
 
-        _file = find_a_dicom_file(case_directory_path=case_directory_path)
+        _file = find_a_dicom_file(
+            case_directory_path=instance.case_directory_path)
         metadata = read_metadata(_file)
         update_case_metadata(instance=instance, metadata=metadata)
 
-        result_directory_path = f'{instance.results_directory_path}/{instance.id}/'
         validate_result_directory_existence(
-            result_directory_path=result_directory_path)
+            result_directory_path=instance.result_directory_path)
 
-        execute_run_model.delay(case_directory_path=case_directory_path,
-                                result_directory_path=result_directory_path,
-                                id=instance.id)
+        # execute_run_model.delay(case_directory_path=case_directory_path,
+        #                         result_directory_path=result_directory_path,
+        #                         id=instance.id)
 
-        logger.info('CT lung infection segmentation task was '
-                    'successfully added to the task queue!')
+        # logger.info('CT lung infection segmentation task was '
+        #             'successfully added to the task queue!')
+
+        logger.info('Functions at creating new CT lung '
+                    'infection segmentation case done!')
