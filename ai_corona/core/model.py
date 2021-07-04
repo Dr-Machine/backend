@@ -17,7 +17,7 @@ logger = logging.getLogger('backend')
 
 MODEL_PATH = f'{os.getcwd()}/ai_corona/core/h5s/ai_corona.h5'
 
-# Move this guys to a dedicated file.
+# Move these guys to a dedicated file.
 BATCH_SIZE = 8
 SHAPE = 512
 
