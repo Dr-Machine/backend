@@ -1,4 +1,4 @@
-- Move BaseCase model somewhere else.
+- Move `BaseCase` model somewhere else.
 - Place lock on model instance while `execute_run` is happening.
 - Move all shared and duplicate code to `utils`.
 - Create custom exceptions.

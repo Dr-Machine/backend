@@ -8,7 +8,7 @@ from accounts.models import BaseCase
 
 from backend.settings import MEDIA_ROOT
 
-from CT_LIS.validators import validate_file_size, validate_involvement
+from utils.validators import validate_file_size, validate_involvement
 
 SERVICE_NICKNAME = 'CT_LIS'
 
