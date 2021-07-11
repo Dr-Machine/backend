@@ -13,7 +13,18 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = '*'
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -24,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # packages
+    'corsheaders',
     'rest_framework',
     'djoser',
 
@@ -36,6 +48,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
